@@ -1,3 +1,6 @@
+<a href="/">Home</a>
+<a href="/about/">About</a>
+
 # About me
 
 My name is Jerry and currently I'm
