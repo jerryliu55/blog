@@ -1,9 +1,12 @@
 ---
+import BaseLayout from "./BaseLayout.astro";
 import Navigation from "../components/Navigation.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<meta charset="utf-8" />
-<Navigation />
-<h1>{frontmatter.title}</h1>
-<slot />
+<BaseLayout pageTitle={frontmatter.title}>
+    <time datetime={frontmatter.pubDate}>
+        {new Date(frontmatter.pubDate).toLocaleDateString()}
+    </time>
+    <slot />
+</BaseLayout>
