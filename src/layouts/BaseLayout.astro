@@ -3,11 +3,14 @@ import Navigation from "../components/Navigation.astro";
 const { pageTitle } = Astro.props;
 ---
 
-<meta charset="utf-8" />
 <html lang="en">
-    <Navigation />
-    <h1>{pageTitle}</h1>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
     <body>
+        <Navigation />
+        <h1>{pageTitle}</h1>
         <slot />
     </body>
 </html>
