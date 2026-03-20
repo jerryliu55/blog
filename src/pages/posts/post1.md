@@ -14,7 +14,7 @@ However there is one major flaw with Kindles that Canadians should be aware of, 
 That's right. **Kindle ereaders can't read ebooks from Canadian libraries**. In the US, Amazon and Overdrive (owner of Libby) have an agreement that allows you to send your borrowed ebooks directly to Kindle devices from the Libby app. I used this feature a lot while living in the US. I was quite surprised find this functionality missing after I moved back to Canada.
 
 Canadian libraries are generally aware of this and recommend patrons to use other ereader devices [1,2]. Practically any other device you buy, including Kindle tablets which run Android, will be able to read library books:
-![device comparison chart](../../images/post1_1.png)
+![device comparison chart](/images/post1_1.png)
 
 Kindle ereaders are the worst device to buy when it comes to library books.
 
