@@ -1,26 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "Home";
 const allPosts = Object.values(
     import.meta.glob("./posts/*.md", { eager: true }),
+) as any[];
+
+allPosts.sort(
+    (a, b) =>
+        new Date(b.frontmatter.pubDate).getTime() -
+        new Date(a.frontmatter.pubDate).getTime(),
 );
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <h2>Posts</h2>
-    {
-        allPosts.map((post: any) => (
-            <li>
-                <a href={post.url}>
-                    <time datetime={post.frontmatter.pubDate}>
-                        {new Date(
-                            post.frontmatter.pubDate,
-                        ).toLocaleDateString()}
-                    </time>{" "}
-                    {post.frontmatter.title}
-                </a>
-            </li>
-        ))
-    }
+<BaseLayout pageTitle="Home">
+    <ul class="post-list">
+        {
+            allPosts.map((post) => (
+                <li>
+                    <a href={post.url}>
+                        <span class="post-date">
+                            {new Date(
+                                post.frontmatter.pubDate,
+                            ).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric",
+                            })}
+                        </span>
+                        <span class="post-title">
+                            {post.frontmatter.title}
+                        </span>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
 </BaseLayout>
