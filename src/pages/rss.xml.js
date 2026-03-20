@@ -11,6 +11,7 @@ export async function GET(context) {
     title: "Jerry Liu",
     description: "Writing by Jerry Liu",
     site: context.site,
+    image: `${context.site}favicon.svg`,
     items: Object.entries(postFiles).map(([path, post]) => ({
       title: post.frontmatter.title,
       pubDate: new Date(post.frontmatter.pubDate),
