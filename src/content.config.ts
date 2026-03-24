@@ -9,6 +9,7 @@ const photos = defineCollection({
         tags: z.array(z.enum(["film", "tmb", "japan", "life", "alberta"])),
         date: z.string(),
         caption: z.string().optional(),
+        hover_info: z.string().optional(),
     }),
 });
 

@@ -42,11 +42,16 @@ const albums = [
         {
             allPhotos.map((photo) => (
                 <figure class="photo-item" data-tags={photo.data.tags.join(" ")}>
-                    <img
-                        src={photo.data.src}
-                        alt={photo.data.alt}
-                        loading="eager"
-                    />
+                    <div class="photo-wrap">
+                        <img
+                            src={photo.data.src}
+                            alt={photo.data.alt}
+                            loading="eager"
+                        />
+                        {photo.data.hover_info && (
+                            <div class="photo-overlay">{photo.data.hover_info}</div>
+                        )}
+                    </div>
                     {photo.data.caption && (
                         <figcaption>{photo.data.caption}</figcaption>
                     )}
@@ -103,12 +108,33 @@ const albums = [
         gap: 1rem;
     }
 
+    .photo-wrap {
+        position: relative;
+    }
+
     .photo-item img {
         width: 100%;
         height: auto;
         display: block;
         margin: 0;
         border-radius: 0;
+    }
+
+    .photo-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .photo-wrap:hover .photo-overlay {
+        opacity: 1;
     }
 
     figcaption {
