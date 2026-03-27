@@ -46,7 +46,7 @@ const albums = [
                         <img
                             src={photo.data.src}
                             alt={photo.data.alt}
-                            loading="eager"
+                            loading="lazy"
                         />
                         {photo.data.hover_info && (
                             <div class="photo-overlay">{photo.data.hover_info}</div>

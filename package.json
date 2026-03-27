@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "optimize-photos": "node scripts/optimize-photos.mjs",
+    "build": "node scripts/optimize-photos.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,5 +16,8 @@
     "markdown-it": "^14.1.1",
     "sanitize-html": "^2.17.2",
     "wrangler": "^4.75.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
