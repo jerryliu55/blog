@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "optimize-photos": "node scripts/optimize-photos.mjs",
-    "build": "node scripts/optimize-photos.mjs && astro build",
+    "build": "npx playwright install chromium && node scripts/optimize-photos.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
