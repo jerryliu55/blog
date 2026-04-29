@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: 'PSA: If you live in Canada you should know this about Kindle'
 pubDate: 2026-03-06
 description: 'A post about using Kindle ereaders in Canada'
@@ -36,11 +35,11 @@ then I believe a Kobo or a newer Android-based device like Boox is your best opt
 ## Research
 1. [Choosing the Right Device for Library Ebooks](https://orl.bc.ca/e-learning/device-advice/)
 > Kindle e-readers—including Paperwhite, Oasis, Scribe, and Basic models—are not compatible with Canadian library ebooks
-> 
-> **Note:** Kindle Fire tablets _are compatible_ because you can install the **Libby app** or use a browser.
+>
+> **Note:** Kindle Fire tablets _are compatible_ because you can install the **Libby app** or use a browser.
 
 2. [toronto public library](https://blogs.tpl.ca/preview-tpl/2011/09/library-ebooks-not-on-kindle-in-canada-yet-updated-june-14/)
-  
+
 3. [Tor DRM free books](https://arstechnica.com/information-technology/2013/05/tor-books-says-cutting-drm-out-of-its-e-books-hasnt-hurt-business/)
 
 4. [amazon allows authors to opt in to non-DRM files](https://mashable.com/article/kindle-launches-drm-free-ebooks)

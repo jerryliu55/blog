@@ -1,23 +1,24 @@
 import rss from "@astrojs/rss";
 import MarkdownIt from "markdown-it";
+import { getCollection } from "astro:content";
 
 export const prerender = true;
 
 const parser = new MarkdownIt();
-const postFiles = import.meta.glob("./posts/*.md", { eager: true });
 
 export async function GET(context) {
+  const posts = await getCollection("posts", ({ data }) => import.meta.env.DEV || !data.draft);
   return rss({
     title: "Jerry Liu",
     description: "Writing by Jerry Liu",
     site: context.site,
     image: `${context.site}favicon.svg`,
-    items: Object.entries(postFiles).map(([path, post]) => ({
-      title: post.frontmatter.title,
-      pubDate: new Date(post.frontmatter.pubDate),
-      description: post.frontmatter.description,
-      link: path.replace(".", "").replace(".md", "/"),
-      content: parser.render(post.rawContent()),
+    items: posts.map((post) => ({
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      link: `/posts/${post.id}/`,
+      content: parser.render(post.body),
     })),
     customData: `<language>en-us</language>`,
   });
