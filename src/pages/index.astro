@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+export const prerender = true;
+
 const allPosts = await getCollection("posts", ({ data }) => import.meta.env.DEV || !data.draft);
 allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
