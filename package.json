@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "NODE_ENV=production node scripts/optimize-photos.mjs && npx @11ty/eleventy",
-    "preview": "npx wrangler pages dev dist"
+    "preview": "NODE_ENV=production npx @11ty/eleventy --serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -14,7 +14,6 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "sharp": "^0.34.5",
-    "wrangler": "^4.86.0"
+    "sharp": "^0.34.5"
   }
 }
