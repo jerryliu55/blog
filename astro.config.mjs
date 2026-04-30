@@ -2,10 +2,13 @@
 import { defineConfig } from "astro/config";
 import rehypeMermaid from "rehype-mermaid";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://jerryliu.me",
   output: "static",
+
   markdown: {
     syntaxHighlight: {
       type: "shiki",
@@ -13,4 +16,6 @@ export default defineConfig({
     },
     rehypePlugins: [rehypeMermaid],
   },
+
+  adapter: cloudflare(),
 });
