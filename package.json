@@ -3,22 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "optimize-photos": "node scripts/optimize-photos.mjs",
-    "build": "npx playwright install chromium && node scripts/optimize-photos.mjs && astro build",
-    "preview": "npm run build && wrangler dev",
-    "astro": "astro",
-    "generate-types": "wrangler types",
-    "deploy": "npm run build && wrangler deploy"
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "NODE_ENV=production node scripts/optimize-photos.mjs && npx @11ty/eleventy",
+    "preview": "npx wrangler pages dev dist"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.2.2",
-    "@astrojs/rss": "^4.0.17",
-    "astro": "^6.0.6",
-    "markdown-it": "^14.1.1",
-    "playwright": "^1.59.1",
-    "rehype-mermaid": "^3.0.0",
-    "sanitize-html": "^2.17.2"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.0",
+    "@kevingimbel/eleventy-plugin-mermaid": "^1.0.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "sharp": "^0.34.5",

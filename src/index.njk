@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+pageTitle: Home
+---
+<ul class="post-list">
+  {% for post in collections.posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <span class="post-date">{{ post.data.pubDate | shortDate }}</span>
+      <span class="post-title">{{ post.data.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

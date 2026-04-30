@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{{ pageTitle }} — Jerry Liu</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" {% if page.url == "/" %}class="active"{% endif %}>home</a>
+      <a href="/photos/" {% if "/photos/" in page.url %}class="active"{% endif %}>photos</a>
+      <a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>about</a>
+    </nav>
+    {{ content | safe }}
+    {% mermaid_js %}
+  </body>
+</html>
