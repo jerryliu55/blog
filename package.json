@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "NODE_ENV=production node scripts/optimize-photos.mjs && npx @11ty/eleventy",
+    "clean": "rm -rf _site",
     "preview": "NODE_ENV=production npx @11ty/eleventy --serve"
   },
   "dependencies": {
